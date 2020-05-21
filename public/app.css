@@ -1,0 +1,35 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.headerContainer {
+    width: 100%;
+    height: 100px;
+    background-color: lightblue;
+    box-shadow: 0 3px 2px 0 #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#jobStatus {
+    margin-left: 10px;
+}
+
+#date {
+    margin-right: 10px;
+}
+
+#jobStatusInterviewing {
+    color: yellow;
+}
+#jobStatusApplying {
+    color: orange;
+}
+#jobStatusAccepted {
+    color: green;
+}
+#jobStatusShelved {
+    color: red;
+}
