@@ -3,6 +3,7 @@ body {
     margin: 0;
 }
 
+/* header */
 .headerContainer {
     width: 100%;
     height: 100px;
@@ -32,4 +33,44 @@ body {
 }
 #jobStatusShelved {
     color: red;
+}
+
+/* KPI */
+.kpiContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+
+}
+
+.KPI {
+    width: 160px;
+    height: 120px;
+    border: 1px solid black;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.chart {
+    width: 100%;
+    height: 500px;
+    background-color: lightgreen;
+    margin-top: 30px;
+}
+
+.writeup {
+    background-color: blueviolet;
+    margin-top: 30px;
+    height: 200px;
+}
+
+.footer {
+    height: 70px;
+    width: 100%;
+    background-color: aquamarine;
+    margin-top: 20px;
 }
