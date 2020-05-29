@@ -40,6 +40,8 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
+    margin-bottom: 30px; 
+
 
 }
 
@@ -48,29 +50,35 @@ body {
     height: 120px;
     border: 1px solid black;
     background-color: bisque;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     
 }
+
+#kpiVal {
+    color: brown;
+    font-size: 40px; 
+    
+}
+
+/*chart*/
 
 .chart {
     width: 100%;
     height: 500px;
     background-color: lightgreen;
-    margin-top: 30px;
+    margin-top: 30px; 
 }
 
 .writeup {
     background-color: blueviolet;
-    margin-top: 30px;
+    margin-top: 30px; 
     height: 200px;
+    width: 100%;
 }
 
 .footer {
     height: 70px;
     width: 100%;
     background-color: aquamarine;
-    margin-top: 20px;
+    margin-top: 20px; 
 }
