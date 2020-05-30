@@ -1,25 +1,40 @@
+:root {
+    --color1: #A65353;
+    --color2: #D97855;
+    --color3: #BFB08B;
+    --color4: #5390A6;
+    --color5: #0D261A;
+    --color6: #F2EEB6;
+    --color7: #41A6A6;
+    --color8: #a6537b;
+}
+
 body {
     padding: 0;
     margin: 0;
+    background-color: whitesmoke;
 }
 
 /* header */
 .headerContainer {
     width: 100%;
     height: 100px;
-    background-color: lightblue;
+    background-color: var(--color4);
     box-shadow: 0 3px 2px 0 #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--color6);
 }
 
 #jobStatus {
     margin-left: 10px;
+    color: var(--color6);
 }
 
 #date {
     margin-right: 10px;
+    color: var(--color6)
 }
 
 #jobStatusInterviewing {
@@ -42,20 +57,20 @@ body {
     margin-top: 30px;
     margin-bottom: 30px; 
 
-
 }
 
 .KPI {
     width: 160px;
     height: 120px;
-    border: 1px solid black;
-    background-color: bisque;
+    border: 2px solid var(--color2);
+    background-color: var(--color4);
     text-align: center;
+    color: var(--color6);
     
 }
 
 #kpiVal {
-    color: brown;
+    color: var(--color6);
     font-size: 40px; 
     
 }
@@ -65,25 +80,43 @@ body {
     width: 100%;
     height: 500px;
     /* margin-top: 30px; */
+    /* border: 5px solid lightblue; */
+
     
 }
 
-.chart svg {
-    
+.chart svg { 
     width: 100%;
     height: 100%;
 }
 
 .writeup {
-    background-color: blueviolet;
+    background-color: var(--color6);
     margin-top: 30px; 
     height: 200px;
     width: 100%;
 }
 
+#writeupTitle {
+    color: var(--color4);
+    margin-left:20px;
+}
+
+#writeupBody {
+    color: var(--color7);
+    margin-left: 20px
+}
+
 .footer {
     height: 70px;
     width: 100%;
-    background-color: aquamarine;
+    background-color: var(--color4);
     margin-top: 20px; 
+    
+}
+
+.footer p {
+    color: var(--color6);
+    font-size: 20px;
+    text-align: center;
 }

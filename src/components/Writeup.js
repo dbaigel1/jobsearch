@@ -3,10 +3,10 @@ import React from 'react'
 const Writeup = (props) => {
     return (
         <div className= "writeup">
-            <h1>
+            <h1 id="writeupTitle">
                 {props.title}
             </h1>
-            <p>
+            <p id="writeupBody">
                {props.body} 
             </p>
 
