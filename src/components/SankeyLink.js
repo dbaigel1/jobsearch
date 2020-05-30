@@ -2,11 +2,8 @@ import React from 'react'
 import {sankeyLinkHorizontal} from "d3-sankey"
 import { Tooltip } from 'react-svg-tooltip';
 
-const SankeyLink = (props/*{link, color}*/) => {
-    // const handleHover = () => {
-    //     console.log(link.value)
-    // }
-    console.log(props)
+const SankeyLink = (props) => {
+
     return (
         <>
             <path

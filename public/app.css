@@ -20,7 +20,7 @@ body {
     width: 100%;
     height: 100px;
     background-color: var(--color4);
-    box-shadow: 0 3px 2px 0 #ccc;
+    /*box-shadow: 0 3px 2px 0 #ccc;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,8 +92,7 @@ body {
 
 .writeup {
     background-color: var(--color6);
-    margin-top: 30px; 
-    height: 200px;
+    height: 300px;
     width: 100%;
 }
 
@@ -104,7 +103,9 @@ body {
 
 #writeupBody {
     color: var(--color7);
-    margin-left: 20px
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
 }
 
 .footer {
@@ -112,6 +113,9 @@ body {
     width: 100%;
     background-color: var(--color4);
     margin-top: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 

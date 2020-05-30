@@ -13,7 +13,7 @@ const Chart = ({data,width,height}) => {
                                    (data)
 
     //const color = chroma.scale("Set1").classes(nodes.length)
-    const colors = ["#A65353","#D97855","#BFB08B","#5390A6", "#0D261A","#F2EEB6","#41A6A6","#a6537b", "#3b2b66", "#53a67c"]
+    const colors = ["#A65353","#D97855","#BFB08B","#5390A6", "#0D261A","#F2EEB6","#41A6A6","#a6537b", "#FFB447", "#FF6961"]//"#3b2b66", "#53a67c"]
     
     // const colorScale = d3.scaleLinear()
     //                      .domain([0, nodes.length])

@@ -70,7 +70,6 @@ const App = () => {
 
 		csv('JobSearchDataTotals.csv')
 		.then(data => {
-			console.log(data[0])
 			setData(data[0])
 			calculateValues(data[0])
 		})
@@ -81,8 +80,6 @@ const App = () => {
 		.then(data => data.json())
 		.then(data => {
 			setSankeyData(data)
-			console.log("here's the input data")
-			console.log(data)
 		})
 		.catch(err => console.log(err))
 
@@ -95,11 +92,10 @@ const App = () => {
 	return (
 		<div>
 			<Header data = {numActiveInterviews} status = {status} date = {currentDate}/>
-
+			<Writeup title="Job Search During Corona"/>
 			<div className="kpiContainer">
 				
 				<KPI title="Active Interviews" data={numActiveInterviews}/>
-				
 				<KPI title="Total Applications" data={allApps}/>
 				<KPI title="Total Interview Rate" data={totalReponse}/>
 				<KPI title="Website/LinkedIn Rate" data={WLRate}/>
@@ -111,8 +107,6 @@ const App = () => {
 			<Chart data={sankeyData} width="1100" height="450"/>
 			: null
 			}
-
-			<Writeup title="Job Search During Corona" body="writeup body"/>
 			
 			<Footer />
 		</div>
