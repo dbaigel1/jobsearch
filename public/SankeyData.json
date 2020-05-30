@@ -1,0 +1,113 @@
+{
+    "nodes" : [
+        {"name": "LinkedIn"}, 
+        {"name": "Website"}, 
+        {"name": "Referral"}, 
+        {"name": "Tufts Handshake"}, 
+        {"name": "First Interview"}, 
+        {"name": "Second Interview"}, 
+        {"name": "Final Interview"}, 
+        {"name": "Offer"}, 
+        {"name": "No Response"}, 
+        {"name": "Rejected"} 
+    ],
+    "links": [
+        {
+            "source": 0,
+            "target": 4,
+            "value": 0 
+        },
+        {
+            "source":1,
+            "target":4,
+            "value":1 
+        },
+        {
+            "source":2,
+            "target":4,
+            "value":5 
+        },
+        {
+            "source":3,
+            "target":4,
+            "value":1 
+        },
+        {
+            "source":0,
+            "target":9,
+            "value":16 
+        },
+        {
+            "source":1,
+            "target":9,
+            "value":39 
+        },
+        {
+            "source":2,
+            "target":9,
+            "value":8 
+        },
+        {
+            "source":3,
+            "target":9,
+            "value":2 
+        },
+        {
+            "source":0,
+            "target":8,
+            "value":14 
+        },
+        {
+            "source":1,
+            "target":8,
+            "value":43 
+        },
+        {
+            "source":2,
+            "target":8,
+            "value":5 
+        },
+        {
+            "source":3,
+            "target":8,
+            "value":11 
+        },
+        {
+            "source":4,
+            "target":5,
+            "value":5 
+        },
+        {
+            "source":4,
+            "target":9,
+            "value":0 
+        },
+        {
+            "source":4,
+            "target":8,
+            "value":2 
+        },
+        {
+            "source":5,
+            "target":6,
+            "value":1 
+        },
+        {
+            "source":5,
+            "target":9,
+            "value":2 
+        },
+        {
+            "source":5,
+            "target":8,
+            "value":2 
+        },
+
+        {
+            "source":6,
+            "target":9,
+            "value":1 
+        }
+
+    ]
+}

@@ -9,6 +9,7 @@ import moment from 'moment'
 
 const App = () => {
 	const [totalData, setData] = useState("")
+	const [sankeyData, setSankeyData] = useState("")
 	const [allApps, setAllApps] = useState(0)
 	const [totalReponse, setTotalReponse] = useState(0)
 	const [referralRate, setReferral] = useState(0)
@@ -18,7 +19,10 @@ const App = () => {
 	const [currentDate, setDate] = useState("")
 	const numActiveInterviews = 2
 
+	
+
 	useEffect(() => {
+		//set header information
 		setDate(moment().format('MM/DD/YYYY'))
 		//can be: Applying, Interviewing, Accepted, Shelved
 		let accepted = false
@@ -29,6 +33,40 @@ const App = () => {
 			accepted ? setStatus("Accepted") : setStatus("Applying")
 		}
 
+		//get data for kpis
+
+		const calculateValues = data => {
+			let allApps = 0
+			let cumRes = 0
+			let rRate = 0
+			let wlRate = 0
+			let tRate = 0
+			
+			allApps += parseInt(data["Total LinkedIn"],10) + parseInt(data["Total Website"],10) + parseInt(data["Total Referral"],10) + parseInt(data["Total Tufts"],10)
+	
+			cumRes = Number(data["Total Response Rate"]) * 100
+			cumRes = cumRes.toFixed(2)
+			cumRes += '%'
+			
+			rRate = (Number(data["Referral Success Rate"]) * 100).toFixed(2)
+			rRate += '%'
+	
+			let totalWL = parseInt(data["Total LinkedIn"],10) + parseInt(data["Total Website"],10)
+	
+			let wAppsSuccess = Number(data["Website Success Rate"]) * parseInt(data["Total Website"], 10)
+			let lAppsSuccess = Number(data["LinkedIn Success Rate"]) * parseInt(data["Total LinkedIn"], 10)
+			wlRate = (((wAppsSuccess + lAppsSuccess) / totalWL)*100).toFixed(2) 
+			wlRate += '%'
+	
+			tRate = (Number(data["Tufts Success Rate"]) * 100).toFixed(2)
+			tRate += '%'
+	
+			setAllApps(allApps)
+			setTotalReponse(cumRes)
+			setReferral(rRate)
+			setTufts(tRate)
+			setWL(wlRate)
+		}
 
 		csv('JobSearchDataTotals.csv')
 		.then(data => {
@@ -37,40 +75,22 @@ const App = () => {
 			calculateValues(data[0])
 		})
 		.catch(err => console.log(err))
+
+		//get data for sankey diagram
+		fetch('SankeyData.json')
+		.then(data => data.json())
+		.then(data => {
+			setSankeyData(data)
+			console.log("here's the input data")
+			console.log(data)
+		})
+		.catch(err => console.log(err))
+
 	}, [])
+
+		
+
 	
-	const calculateValues = data => {
-		let allApps = 0
-		let cumRes = 0
-		let rRate = 0
-		let wlRate = 0
-		let tRate = 0
-		
-		allApps += parseInt(data["Total LinkedIn"],10) + parseInt(data["Total Website"],10) + parseInt(data["Total Referral"],10) + parseInt(data["Total Tufts"],10)
-
-		cumRes = Number(data["Total Response Rate"]) * 100
-		cumRes = cumRes.toFixed(2)
-		cumRes += '%'
-		
-		rRate = (Number(data["Referral Success Rate"]) * 100).toFixed(2)
-		rRate += '%'
-
-		let totalWL = parseInt(data["Total LinkedIn"],10) + parseInt(data["Total Website"],10)
-
-		let wAppsSuccess = Number(data["Website Success Rate"]) * parseInt(data["Total Website"], 10)
-		let lAppsSuccess = Number(data["LinkedIn Success Rate"]) * parseInt(data["Total LinkedIn"], 10)
-		wlRate = (((wAppsSuccess + lAppsSuccess) / totalWL)*100).toFixed(2) 
-		wlRate += '%'
-
-		tRate = (Number(data["Tufts Success Rate"]) * 100).toFixed(2)
-		tRate += '%'
-
-		setAllApps(allApps)
-		setTotalReponse(cumRes)
-		setReferral(rRate)
-		setTufts(tRate)
-		setWL(wlRate)
-	}
 
 	return (
 		<div>
@@ -87,7 +107,10 @@ const App = () => {
 				<KPI title="Tufts Handshake Rate" data={tuftsRate}/>
 			</div>
 
-			<Chart />
+			{sankeyData ?
+			<Chart data={sankeyData} width="1100" height="450"/>
+			: null
+			}
 
 			<Writeup title="writeup title" body="writeup body"/>
 			{/* Header
