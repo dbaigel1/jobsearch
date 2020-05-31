@@ -7,6 +7,7 @@ import Footer from "./Footer"
 import ColorLegend from "./ColorLegend"
 import {csv} from 'd3'
 import moment from 'moment'
+import {getBody} from "../getBody.js"
 
 const App = () => {
 	const [totalData, setData] = useState("")
@@ -93,7 +94,7 @@ const App = () => {
 	return (
 		<>
 			<Header data = {numActiveInterviews} status = {status} date = {currentDate}/>
-			<Writeup title="Job Search During Corona"/>
+			<Writeup title="Job Search During Corona" body={getBody(1)}/>
 			<div className="kpiContainer">
 				
 				<KPI title="Active Interviews" data={numActiveInterviews}/>
@@ -110,7 +111,9 @@ const App = () => {
 			<Chart data={sankeyData} width="1100" height="450"/>
 			: null
 			}
-			
+			<br></br>
+			<Writeup title="Conclusions" body={getBody(2)}/>
+
 			<Footer />
 		</>
 	)

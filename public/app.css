@@ -111,7 +111,6 @@ body {
     height: 70px;
     width: 100%;
     background-color: var(--color4);
-    margin-top: 20px; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,6 +124,15 @@ body {
 }
 
 .legend {
-    width: 100%;
-    
+    width: 100%;   
+}
+
+#resumelink {
+    text-decoration: none;
+    color: var(--color2);
+}
+
+#resumelink:hover {
+    color: var(--color1);
+    text-decoration: underline;
 }

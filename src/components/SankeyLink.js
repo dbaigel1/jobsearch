@@ -1,21 +1,33 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {sankeyLinkHorizontal} from "d3-sankey"
-import { Tooltip } from 'react-svg-tooltip';
+
 
 const SankeyLink = (props) => {
+    const [op, setOp] = useState('0.6')
+    const style = {
+        fill: 'none',
+        strokeOpacity: op,
+        stroke: props.color,
+        strokeWidth: Math.max(2, props.link.width)
+    }
+
+    const handleHover = () => {
+        setOp("1")
+    }
+
+    const handleLeave = () => {
+        setOp("0.6")
+    }
 
     return (
         <>
             <path
                 d={sankeyLinkHorizontal()(props.link)}
                 style={
-                    {
-                        fill: 'none',
-                        strokeOpacity: '0.7',
-                        stroke: props.color,
-                        strokeWidth: Math.max(2, props.link.width)
-                    }
+                    style
                 }
+                onMouseOver={handleHover}
+                onMouseLeave={handleLeave}
             >
                 <title>{props.link.source.name + " -> " + props.link.target.name + ": " + props.link.value}</title>
             </path>
