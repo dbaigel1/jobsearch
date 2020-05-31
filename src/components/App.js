@@ -4,6 +4,7 @@ import KPI from "./KPI"
 import Chart from "./Chart"
 import Writeup from "./Writeup"
 import Footer from "./Footer"
+import ColorLegend from "./ColorLegend"
 import {csv} from 'd3'
 import moment from 'moment'
 
@@ -90,7 +91,7 @@ const App = () => {
 	
 
 	return (
-		<div>
+		<>
 			<Header data = {numActiveInterviews} status = {status} date = {currentDate}/>
 			<Writeup title="Job Search During Corona"/>
 			<div className="kpiContainer">
@@ -103,13 +104,15 @@ const App = () => {
 				<KPI title="Tufts Handshake Rate" data={tuftsRate}/>
 			</div>
 
+			<ColorLegend width="1200" height="80"/>
+
 			{sankeyData ?
 			<Chart data={sankeyData} width="1100" height="450"/>
 			: null
 			}
 			
 			<Footer />
-		</div>
+		</>
 	)
 
 }
