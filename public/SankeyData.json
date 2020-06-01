@@ -45,7 +45,7 @@
         {
             "source":3,
             "target":9,
-            "value":2 
+            "value":3 
         },
         {
             "source":0,
@@ -65,7 +65,7 @@
         {
             "source":3,
             "target":8,
-            "value":11 
+            "value":10 
         },
         {
             "source":4,

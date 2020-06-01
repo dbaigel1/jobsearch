@@ -97,12 +97,24 @@ const App = () => {
 			<Writeup title="Job Search During Corona" body={getBody(1)}/>
 			<div className="kpiContainer">
 				
-				<KPI title="Active Interviews" data={numActiveInterviews}/>
-				<KPI title="Total Applications" data={allApps}/>
-				<KPI title="Total Interview Rate" data={totalReponse}/>
 				<KPI title="Website/LinkedIn Rate" data={WLRate}/>
 				<KPI title="Referral Rate" data={referralRate}/>
 				<KPI title="Tufts Handshake Rate" data={tuftsRate}/>
+				<KPI title="Website/LinkedIn Rate" data={WLRate}/>
+				<KPI title="Referral Rate" data={referralRate}/>
+				<KPI title="Tufts Handshake Rate" data={tuftsRate}/>
+			</div>
+			<div className="kpiContainer2">
+				<div className="kpiLines">
+					<KPI title="Website/LinkedIn Rate" data={WLRate}/>
+					<KPI title="Referral Rate" data={referralRate}/>
+					<KPI title="Tufts Handshake Rate" data={tuftsRate}/>
+				</div>
+				<div className="kpiLines">
+					<KPI title="Website/LinkedIn Rate" data={WLRate}/>
+					<KPI title="Referral Rate" data={referralRate}/>
+					<KPI title="Tufts Handshake Rate" data={tuftsRate}/>
+				</div>
 			</div>
 
 			<ColorLegend width="1200" height="80"/>
