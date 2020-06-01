@@ -13,6 +13,7 @@ body {
     padding: 0px;
     margin: 0px;
     background-color: whitesmoke;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* header */
@@ -91,7 +92,7 @@ body {
 
 #kpiVal {
     color: var(--color6);
-    font-size: 40px; 
+    font-size: 35px; 
     
 }
 
@@ -108,7 +109,7 @@ body {
 
 .writeup {
     background-color: var(--color6);
-    height: 350px;
+    height: 405px;
     width: 100%;
     display: flex;
     justify-content: flex-start;
